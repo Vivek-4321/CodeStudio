@@ -1,0 +1,114 @@
+.user-profile {
+  position: relative;
+  display: inline-block;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--geist-border);
+  transition: border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.user-avatar:hover {
+  border-color: var(--geist-accent);
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--geist-accent), var(--geist-accent-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--space-2);
+  background: var(--geist-surface);
+  border: 1px solid var(--geist-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.user-info {
+  padding: 16px;
+}
+
+.user-name {
+  color: var(--geist-foreground);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: var(--space-1);
+}
+
+.user-email {
+  color: var(--geist-foreground-secondary);
+  font-size: 12px;
+  margin-bottom: var(--space-2);
+}
+
+.auth-methods {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.auth-badge {
+  background: #333;
+  color: #ccc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.auth-badge.google {
+  background: #4285f4;
+  color: white;
+}
+
+.auth-badge.local {
+  background: #28a745;
+  color: white;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #333;
+  margin: 0;
+}
+
+.logout-button {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  color: var(--geist-error);
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background: var(--geist-surface-secondary);
+}

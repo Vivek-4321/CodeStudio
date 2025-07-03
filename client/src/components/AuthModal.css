@@ -1,0 +1,267 @@
+/* AuthModal.css - Follows the main design system */
+
+/* Override modal size for auth modal */
+.auth-modal.modal-card {
+  max-width: 500px;
+  width: 90vw;
+}
+
+/* Auth Form Styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.form-hint {
+  font-size: 11px;
+  color: var(--geist-foreground-tertiary);
+  margin-top: var(--space-1);
+  margin-bottom: 0;
+}
+
+/* Error Message Styling */
+.auth-error-message {
+  background: var(--geist-error-light);
+  border: 1px solid var(--geist-error);
+  color: var(--geist-error);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Google Auth Button */
+.google-auth-button {
+  width: 100%;
+  background: var(--geist-background);
+  border: 1px solid var(--geist-border);
+  color: var(--geist-foreground);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-sans);
+}
+
+.google-auth-button:hover:not(:disabled) {
+  background: var(--geist-surface-secondary);
+  border-color: var(--geist-border-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.google-auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Auth Divider */
+.auth-divider {
+  text-align: center;
+  margin: var(--space-4) 0;
+  position: relative;
+  font-size: 12px;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--geist-border);
+}
+
+.auth-divider span {
+  background: var(--geist-background);
+  color: var(--geist-foreground-secondary);
+  padding: 0 var(--space-3);
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Submit Button Override */
+.auth-submit-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+
+/* Auth Toggle */
+.auth-toggle {
+  text-align: center;
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--geist-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.toggle-text {
+  font-size: 13px;
+  color: var(--geist-foreground-secondary);
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: var(--geist-foreground);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-family: var(--font-sans);
+}
+
+.toggle-button:hover:not(:disabled) {
+  background: var(--geist-surface-secondary);
+  color: var(--geist-accent);
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.toggle-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form Labels with Icons */
+.form-label {
+  display: flex !important;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--geist-foreground);
+  margin-bottom: var(--space-2);
+}
+
+.form-label svg {
+  color: var(--geist-foreground-secondary);
+  flex-shrink: 0;
+}
+
+/* Loading Spinner for Auth */
+.auth-submit-button .loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-modal.modal-card {
+    margin: var(--space-3);
+    max-height: 95vh;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  
+  .modal-header,
+  .modal-content {
+    padding: var(--space-4);
+  }
+  
+  .auth-toggle {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-modal.modal-card {
+    margin: var(--space-2);
+    width: calc(100vw - 32px);
+  }
+  
+  .modal-header,
+  .modal-content {
+    padding: var(--space-3);
+  }
+  
+  .google-auth-button {
+    padding: var(--space-3);
+    font-size: 13px;
+  }
+  
+  .form-section {
+    gap: var(--space-2);
+  }
+  
+  .modal-actions {
+    margin-top: var(--space-3);
+  }
+}
+
+/* Focus States */
+.google-auth-button:focus,
+.toggle-button:focus {
+  outline: 2px solid var(--geist-accent);
+  outline-offset: 2px;
+}
+
+/* Animation for Modal */
+@keyframes authModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-modal.modal-card {
+  animation: authModalSlideIn 0.3s ease-out;
+}
+
+/* Loading State for Form */
+.auth-form.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.auth-form.loading .form-input {
+  background: var(--geist-surface-secondary);
+}
