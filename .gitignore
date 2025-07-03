@@ -94,3 +94,6 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Build scripts
+server/build-framework-images.sh
